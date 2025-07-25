@@ -1,0 +1,27 @@
+{
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about Kurema Hub",
+    "illustration_alt": "FAQ Illustration",
+    "q1": "What is Kurema Hub?",
+    "a1": "Kurema Hub is an art platform designed to help artists showcase their artwork, connect with viewers, and receive feedback. It allows artists to upload, update, and delete their artwork, all for free, without commissions.",
+    "q2": "How can I upload my artwork to Kurema Hub?",
+    "a2": "To upload your artwork, first create an account. Once logged in, click on your profile avatar to access the page where you can manage your arts. From there, you can upload as many pieces as you like.",
+    "q3": "Is there a limit to the number of artworks I can upload?",
+    "a3": "No, there is no limit. Artists can upload as many artworks as they wish for free.",
+    "q4": "Do I need to pay to use Kurema Hub as an artist?",
+    "a4": "No, Kurema Hub is currently free for artists. There are no fees or commissions.",
+    "q5": "Can I update the details of my uploaded artwork later?",
+    "a5": "Yes, you can update your artwork details. Simply log in, click on your profile avatar, and navigate to the \"Manage Arts\" page, where you can update any information about your artwork.",
+    "q6": "What should I do if I want to delete an artwork?",
+    "a6": "Deleting artwork is also managed through the \"Manage Arts\" page. Log in, click on your profile avatar, and you'll find the option to delete any of your uploaded artworks.",
+    "q7": "How can I contact the admins of Kurema Hub?",
+    "a7": "To contact the admins, visit the \"Contact\" section of the website, where you'll find all the information you need to reach out to them.",
+    "q8": "Is there any quality or size restriction for uploading artwork images?",
+    "a8": "Yes, the artwork must be an image file, and only one image can be uploaded per art piece.",
+    "q9": "Can I get feedback on my artwork from other users?",
+    "a9": "Yes, users can leave feedback on your artwork. To view the feedback, simply click on the artwork, and you'll immediately see who has provided feedback.",
+    "q10": "Do users need an account to view or provide feedback on my artwork?",
+    "a10": "No, users are not required to have an account to view or provide feedback on your artwork."
+  }
+}

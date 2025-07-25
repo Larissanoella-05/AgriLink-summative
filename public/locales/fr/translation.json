@@ -1,0 +1,27 @@
+{
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Trouvez des réponses aux questions courantes sur Kurema Hub",
+    "illustration_alt": "Illustration FAQ",
+    "q1": "Qu'est-ce que Kurema Hub ?",
+    "a1": "Kurema Hub est une plateforme artistique conçue pour aider les artistes à présenter leurs œuvres, à se connecter avec les spectateurs et à recevoir des retours. Elle permet aux artistes de télécharger, mettre à jour et supprimer leurs œuvres, le tout gratuitement, sans commissions.",
+    "q2": "Comment puis-je télécharger mon œuvre sur Kurema Hub ?",
+    "a2": "Pour télécharger votre œuvre, créez d'abord un compte. Une fois connecté, cliquez sur votre avatar de profil pour accéder à la page où vous pouvez gérer vos œuvres. De là, vous pouvez télécharger autant de pièces que vous le souhaitez.",
+    "q3": "Y a-t-il une limite au nombre d'œuvres que je peux télécharger ?",
+    "a3": "Non, il n'y a pas de limite. Les artistes peuvent télécharger autant d'œuvres qu'ils le souhaitent gratuitement.",
+    "q4": "Dois-je payer pour utiliser Kurema Hub en tant qu'artiste ?",
+    "a4": "Non, Kurema Hub est actuellement gratuit pour les artistes. Il n'y a pas de frais ni de commissions.",
+    "q5": "Puis-je mettre à jour les détails de mon œuvre téléchargée ultérieurement ?",
+    "a5": "Oui, vous pouvez mettre à jour les détails de votre œuvre. Il suffit de vous connecter, de cliquer sur votre avatar de profil et de naviguer vers la page \"Gérer les œuvres\", où vous pourrez mettre à jour toutes les informations concernant votre œuvre.",
+    "q6": "Que dois-je faire si je veux supprimer une œuvre ?",
+    "a6": "La suppression d'œuvres se fait également via la page \"Gérer les œuvres\". Connectez-vous, cliquez sur votre avatar de profil, et vous trouverez l'option pour supprimer n'importe laquelle de vos œuvres téléchargées.",
+    "q7": "Comment puis-je contacter les administrateurs de Kurema Hub ?",
+    "a7": "Pour contacter les administrateurs, visitez la section \"Contact\" du site web, où vous trouverez toutes les informations nécessaires pour les joindre.",
+    "q8": "Y a-t-il des restrictions de qualité ou de taille pour le téléchargement des images d'œuvres ?",
+    "a8": "Oui, l'œuvre doit être un fichier image, et une seule image peut être téléchargée par œuvre.",
+    "q9": "Puis-je recevoir des retours sur mon œuvre de la part d'autres utilisateurs ?",
+    "a9": "Oui, les utilisateurs peuvent laisser des retours sur votre œuvre. Pour voir les retours, cliquez simplement sur l'œuvre, et vous verrez immédiatement qui a fourni des retours.",
+    "q10": "Les utilisateurs ont-ils besoin d'un compte pour voir ou donner des retours sur mon œuvre ?",
+    "a10": "Non, les utilisateurs n'ont pas besoin d'avoir un compte pour voir ou donner des retours sur votre œuvre."
+  }
+}
