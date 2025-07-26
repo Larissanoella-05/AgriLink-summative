@@ -1,0 +1,27 @@
+{
+  "faq": {
+    "title": "Ibibazo Bibazwa Kenshi",
+    "subtitle": "Bona ibisubizo ku bibazo rusange kuri Kurema Hub",
+    "illustration_alt": "Ishusho ya FAQ",
+    "q1": "Kurema Hub ni iki?",
+    "a1": "Kurema Hub ni urubuga rw'ubuhanzi rwashyiriweho gufasha abahanzi kwerekana imirimo yabo, guhuza n'abareba, no kwakira ibitekerezo. Ruha abahanzi uburyo bwo kohereza, kuvugurura, no gusiba imirimo yabo, byose ku buntu, nta mafaranga asabwa.",
+    "q2": "Nashyira nte umurimo wanjye kuri Kurema Hub?",
+    "a2": "Kugira ngo wohereze umurimo wawe, banza ukore konti. Umaze kwinjira, kanda ku ishusho yawe y'umwirondoro kugira ngo ugere ku rupapuro ushobora gucunga imirimo yawe. Uhereye aho, ushobora kohereza ibice byinshi uko ubishaka.",
+    "q3": "Hari umubare ntarengwa w'imirimo nashobora kohereza?",
+    "a3": "Oya, nta mubare ntarengwa. Abahanzi bashobora kohereza imirimo myinshi uko bashaka ku buntu.",
+    "q4": "Ngomba kwishyura kugira ngo nkoreshe Kurema Hub nk'umuhanzi?",
+    "a4": "Oya, Kurema Hub kuri ubu ni ubuntu ku bahanzi. Nta mafaranga cyangwa komisiyo isabwa.",
+    "q5": "Nashobora kuvugurura amakuru y'umurimo wanjye nyuma yo kuwushyiraho?",
+    "a5": "Yego, ushobora kuvugurura amakuru y'umurimo wawe. Injira gusa, kanda ku ishusho yawe y'umwirondoro, maze ujye ku rupapuro \"Gucunga Imirimo\", aho ushobora kuvugurura amakuru yose yerekeye umurimo wawe.",
+    "q6": "Nakora iki niba nshaka gusiba umurimo?",
+    "a6": "Gusiba imirimo na byo bikorwa binyuze ku rupapuro \"Gucunga Imirimo\". Injira, kanda ku ishusho yawe y'umwirondoro, uzabona uburyo bwo gusiba umurimo wawe wose wohereje.",
+    "q7": "Nabona nte abayobozi ba Kurema Hub?",
+    "a7": "Kugira ngo ubone abayobozi, sura igice \"Twandikire\" ku rubuga, aho uzasanga amakuru yose ukeneye kugira ngo ubagerekeho.",
+    "q8": "Hari ibisabwa ku bufatanye cyangwa ingano mu kohereza amashusho y'imirimo?",
+    "a8": "Yego, umurimo ugomba kuba ari dosiye y'ishusho, kandi ishusho imwe gusa niyo ishobora koherezwa ku murimo umwe.",
+    "q9": "Nashobora kubona ibitekerezo ku murimo wanjye biturutse ku bandi bakoresha?",
+    "a9": "Yego, abakoresha bashobora gutanga ibitekerezo ku murimo wawe. Kugira ngo urebe ibitekerezo, kanda gusa ku murimo, uzabona ako kanya uwatanze ibitekerezo.",
+    "q10": "Abakoresha bakeneye konti kugira ngo barebe cyangwa batange ibitekerezo ku murimo wanjye?",
+    "a10": "Oya, abakoresha ntibakeneye kugira konti kugira ngo barebe cyangwa batange ibitekerezo ku murimo wawe."
+  }
+}
