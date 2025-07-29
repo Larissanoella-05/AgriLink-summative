@@ -15,6 +15,10 @@ import { ProfileCropDetailed } from "./features/Crops/ProfileCropDetailed"
 import Education from "./pages/Education"
 import Course from "./pages/Course"
 import Quiz from "./pages/Quiz"
+import Settings from "./pages/Settings"
+import Analytics from "./pages/Analytics"
+import Contact from "./pages/Contact"
+import About from "./pages/About"
 import { ThemeProvider } from "./contexts/ThemeContext"
 
 const queryClient = new QueryClient({
@@ -41,6 +45,8 @@ export default function App() {
                 <Route element={<Course></Course>} path="education/course/:id"></Route>
                 <Route element={<Quiz></Quiz>} path="quiz/:id"></Route>
                 <Route element={<Crop></Crop>} path="crop/:id"></Route>
+                <Route element={<Contact></Contact>} path="contact"></Route>
+                <Route element={<About></About>} path="about"></Route>
                 <Route
                   element={
                     <ProtectedRoute>
@@ -49,16 +55,18 @@ export default function App() {
                   }
                   path="account"
                 >
-                  <Route index element={<Navigate replace to="personalInfo"></Navigate>}></Route>
+                  <Route index element={<Navigate replace to="personal-info"></Navigate>}></Route>
 
-                  <Route element={<PersonalInfo></PersonalInfo>} path="personalInfo"></Route>
+                  <Route element={<PersonalInfo></PersonalInfo>} path="personal-info"></Route>
 
                   <Route
                     element={<ProfileCropDetailed></ProfileCropDetailed>}
-                    path="/account/manageCrops/crop/:id"
+                    path="manage-crops/crop/:id"
                   ></Route>
 
-                  <Route element={<ManageCrops></ManageCrops>} path="manageCrops"></Route>
+                  <Route element={<ManageCrops></ManageCrops>} path="manage-crops"></Route>
+                  <Route element={<Settings></Settings>} path="settings"></Route>
+                  <Route element={<Analytics></Analytics>} path="analytics"></Route>
                 </Route>
               </Route>
             </Routes>

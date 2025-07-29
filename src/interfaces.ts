@@ -1,10 +1,11 @@
-import type { UUID } from "crypto"
+
 
 export interface SignupData {
   firstName: string
   lastName: string
   password: string
   email: string
+  phoneNumber?: string
 }
 
 export interface LoginData {
@@ -25,14 +26,7 @@ export interface Crops {
   quantity?: number
   unit?: string
   harvest_date?: string
-  authUsers: {
-    id: number
-    firstName: string
-    lastName: string
-    email: string
-    avatar: string
-    authUserId: UUID
-  }
+  authUsers?: AuthUsers
 }
 
 export interface Crop {
@@ -45,12 +39,14 @@ export interface Crop {
 }
 
 export interface AuthUsers {
-  id: number
-  authUserId: UUID
-  avatar: string
+  id: string
   firstName: string
   lastName: string
   email: string
+  phoneNumber?: string
+  avatar?: string
+  created_at: string
+  updated_at: string
 }
 
 export interface Review {
@@ -71,6 +67,44 @@ export interface ReviewForm {
   comment: string
   rate: number
   cropId: number
+}
+
+export interface CartItem {
+  id: number
+  crop_id: number
+  user_id: string
+  quantity: number
+  created_at: string
+  crops?: Crops
+}
+
+export interface Order {
+  id: number
+  user_id: string
+  farmer_id: string
+  total_amount: number
+  status: "pending" | "confirmed" | "preparing" | "ready" | "delivered" | "cancelled"
+  created_at: string
+  updated_at: string
+  items: OrderItem[]
+  buyer?: AuthUsers
+  farmer?: AuthUsers
+}
+
+export interface OrderItem {
+  id: number
+  order_id: number
+  crop_id: number
+  quantity: number
+  price: number
+  crops?: Crops
+}
+
+export interface NotificationSettings {
+  emailNotifications: boolean
+  orderUpdates: boolean
+  reviewNotifications: boolean
+  marketingEmails: boolean
 }
 
 export interface Quiz {
@@ -136,4 +170,15 @@ export interface UserProgress {
   score: number
   completed: boolean
   completedAt: string
+}
+
+export interface Reviews {
+  id: number
+  crop_id: number
+  user_id: string
+  rating: number
+  comment?: string
+  created_at: string
+  authUsers?: AuthUsers
+  crops?: Crops
 }
