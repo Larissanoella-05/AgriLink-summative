@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { useTranslation } from "react-i18next"
 
 const LandingCarousel = () => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
   const isKinyarwanda = i18n.language === 'rw'
 
   const slides = [

@@ -34,7 +34,7 @@ export function UpdatePersonalCrop({ id }: { id: number }) {
   const { authUsers } = useAuthUsers()
   const { updateCrops, isEditing } = useUpdateCrop()
 
-  const authUser = authUsers?.find((user) => user.authUserId === userId)
+  const authUser = authUsers?.find((user) => user.id === userId)
   const authUserId = authUser?.id
   const [open, setOpen] = useState(false)
 
@@ -82,7 +82,7 @@ export function UpdatePersonalCrop({ id }: { id: number }) {
           name: data.name,
           description: data.description,
           category: data.category,
-          userId: authUserId,
+          userId: Number(authUserId),
           price: data.price,
         },
       },

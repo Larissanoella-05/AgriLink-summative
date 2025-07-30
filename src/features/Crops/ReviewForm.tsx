@@ -44,7 +44,7 @@ export function AddReview({
     saveReviewToLocalStorage({
       cropId: id,
       cropName: crop?.name || 'Unknown Crop',
-      farmerId: crop?.authUsers?.authUserId || '',
+      farmerId: crop?.authUsers?.id || '',
       name: data.name,
       email: data.email,
       comment: data.comment,

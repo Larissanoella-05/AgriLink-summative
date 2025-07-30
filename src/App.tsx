@@ -18,7 +18,7 @@ import Quiz from "./pages/Quiz"
 import Settings from "./pages/Settings"
 import Analytics from "./pages/Analytics"
 import Contact from "./pages/Contact"
-import About from "./pages/About"
+
 import { ThemeProvider } from "./contexts/ThemeContext"
 
 const queryClient = new QueryClient({
