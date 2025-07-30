@@ -30,7 +30,7 @@ export default function Footer() {
   const companyLinks = [
     { key: 'footerAbout', to: 'about', type: 'scroll' },
     { key: 'footerProducts', to: '/products', type: 'link' },
-    { key: 'footerEducation', to: '/education', type: 'link' },
+    { key: 'navEducation', to: '/education', type: 'link' },
   ];
 
   return (

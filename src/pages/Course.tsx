@@ -34,7 +34,7 @@ export default function Course() {
   const [course, setCourse] = useState<Course | null>(null)
 
   useEffect(() => {
-    // Get course data from localStorage or use defaults
+    
     const courseId = Number.parseInt(id || "1")
     const savedProgress = localStorage.getItem(`course-${courseId}-progress`)
 
@@ -44,7 +44,7 @@ export default function Course() {
         title: "Crop Rotation Fundamentals",
         description: "Learn the basics of crop rotation and its benefits for soil health",
         difficulty: "Beginner",
-        totalDuration: "45 min",
+        totalDuration: "60 min",
         contents: [
           {
             id: 1,
@@ -85,10 +85,51 @@ export default function Course() {
           },
           {
             id: 2,
-            type: "video",
+            type: "article",
             title: "Crop Rotation in Practice",
-            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-            duration: "15 min",
+            content: `
+              <h2>Implementing Crop Rotation on Your Farm</h2>
+              <p>Successful crop rotation requires careful planning and consistent implementation. Here's how to put theory into practice on your Rwandan farm.</p>
+              
+              <h3>Starting Your First Rotation</h3>
+              <ul>
+                <li><strong>Map your fields:</strong> Divide your land into sections for rotation</li>
+                <li><strong>Test soil conditions:</strong> Know your starting point</li>
+                <li><strong>Choose appropriate crops:</strong> Select varieties suited to your climate and soil</li>
+                <li><strong>Plan timing:</strong> Consider planting and harvest seasons</li>
+              </ul>
+
+              <h3>Common Rotation Patterns in Rwanda</h3>
+              <div style="background: #f0f8f0; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                <h4>2-Year Rotation (Simple)</h4>
+                <p><strong>Season A:</strong> Legumes (beans, groundnuts)<br>
+                <strong>Season B:</strong> Cereals (maize, sorghum)</p>
+              </div>
+              
+              <div style="background: #f0f8f0; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                <h4>3-Year Rotation (Intermediate)</h4>
+                <p><strong>Year 1:</strong> Nitrogen-fixing crops (beans)<br>
+                <strong>Year 2:</strong> Heavy feeders (maize, vegetables)<br>
+                <strong>Year 3:</strong> Light feeders (root crops)</p>
+              </div>
+
+              <h3>Monitoring Success</h3>
+              <p>Track these indicators to measure your rotation's effectiveness:</p>
+              <ul>
+                <li>Soil organic matter levels</li>
+                <li>Crop yield improvements</li>
+                <li>Reduced pest and disease pressure</li>
+                <li>Lower fertilizer requirements</li>
+              </ul>
+
+              <h3>Seasonal Considerations for Rwanda</h3>
+              <ul>
+                <li><strong>Season A (Sept-Jan):</strong> Main rainy season - ideal for maize, beans</li>
+                <li><strong>Season B (Feb-May):</strong> Short rains - suitable for vegetables, legumes</li>
+                <li><strong>Season C (Jun-Aug):</strong> Dry season - drought-tolerant crops with irrigation</li>
+              </ul>
+            `,
+            duration: "18 min",
             completed: false,
           },
           {
@@ -138,10 +179,57 @@ export default function Course() {
           },
           {
             id: 4,
-            type: "video",
-            title: "Success Stories from Rwandan Farmers",
-            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-            duration: "8 min",
+            type: "article",
+            title: "Success Stories and Best Practices",
+            content: `
+              <h2>Learning from Successful Farmers</h2>
+              <p>Real-world examples from Rwandan farmers who have successfully implemented crop rotation systems.</p>
+              
+              <h3>Case Study 1: Small-Scale Farmer in Musanze</h3>
+              <div style="background: #e8f5e8; padding: 15px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+                <p><strong>Challenge:</strong> Poor soil fertility and declining yields on 0.5-hectare plot</p>
+                <p><strong>Solution:</strong> Implemented 3-year rotation: beans → maize → sweet potatoes</p>
+                <p><strong>Results:</strong> 40% increase in yields, reduced fertilizer costs by 30%, improved soil structure</p>
+                <p><strong>Key Learning:</strong> Patience and consistent record-keeping were crucial for success</p>
+              </div>
+
+              <h3>Case Study 2: Cooperative in Nyagatare</h3>
+              <div style="background: #e8f5e8; padding: 15px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+                <p><strong>Challenge:</strong> Persistent pest problems in continuous maize cultivation</p>
+                <p><strong>Solution:</strong> Diversified 4-crop rotation including sunflowers and sorghum</p>
+                <p><strong>Results:</strong> 60% reduction in pest damage, improved soil organic matter, new income streams</p>
+                <p><strong>Key Learning:</strong> Diversification provided both pest control and market opportunities</p>
+              </div>
+
+              <h3>Key Success Factors</h3>
+              <ul>
+                <li><strong>Patience:</strong> Benefits may take 2-3 seasons to become apparent</li>
+                <li><strong>Record Keeping:</strong> Track yields, costs, and observations for each season</li>
+                <li><strong>Community Learning:</strong> Join farmer groups to share experiences and knowledge</li>
+                <li><strong>Market Research:</strong> Ensure rotated crops have viable markets</li>
+                <li><strong>Gradual Implementation:</strong> Start with small plots before scaling up</li>
+              </ul>
+
+              <h3>Common Mistakes to Avoid</h3>
+              <ul>
+                <li>Rotating crops from the same family (e.g., tomatoes after potatoes)</li>
+                <li>Not considering labor requirements for different crops</li>
+                <li>Ignoring soil testing results and pH requirements</li>
+                <li>Abandoning rotation too early before seeing benefits</li>
+                <li>Not planning for storage and marketing of diverse crops</li>
+              </ul>
+
+              <h3>Getting Started Checklist</h3>
+              <ul>
+                <li>□ Test your soil pH and nutrient levels</li>
+                <li>□ Map your land and divide into rotation blocks</li>
+                <li>□ Research market demand for potential rotation crops</li>
+                <li>□ Start with a simple 2-3 crop rotation</li>
+                <li>□ Keep detailed records from the first season</li>
+                <li>□ Connect with local extension services for support</li>
+              </ul>
+            `,
+            duration: "15 min",
             completed: false,
           },
         ],
@@ -234,6 +322,164 @@ export default function Course() {
           },
         ],
       },
+      3: {
+        id: 3,
+        title: "Sustainable Pest Control",
+        description: "Natural and eco-friendly approaches to pest management",
+        difficulty: "Advanced",
+        totalDuration: "50 min",
+        contents: [
+          {
+            id: 1,
+            type: "article",
+            title: "Introduction to Sustainable Pest Control",
+            content: `
+              <h2>What is Sustainable Pest Control?</h2>
+              <p>Sustainable pest control focuses on managing pests using environmentally friendly methods that protect beneficial insects and maintain ecological balance.</p>
+              
+              <h3>Key Principles</h3>
+              <ul>
+                <li><strong>Prevention:</strong> Creating conditions unfavorable to pests</li>
+                <li><strong>Biological Control:</strong> Using natural predators and parasites</li>
+                <li><strong>Cultural Control:</strong> Modifying farming practices</li>
+                <li><strong>Minimal Chemical Use:</strong> Using pesticides only when necessary</li>
+              </ul>
+
+              <h3>Benefits</h3>
+              <ul>
+                <li>Protects beneficial insects like bees and butterflies</li>
+                <li>Reduces chemical residues in food</li>
+                <li>Prevents pest resistance to chemicals</li>
+                <li>Cost-effective in the long term</li>
+              </ul>
+            `,
+            duration: "12 min",
+            completed: false,
+          },
+          {
+            id: 2,
+            type: "video",
+            title: "Natural Pest Control Methods",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+            duration: "18 min",
+            completed: false,
+          },
+          {
+            id: 3,
+            type: "article",
+            title: "Companion Planting for Pest Control",
+            content: `
+              <h2>Using Plants to Control Pests</h2>
+              <p>Companion planting involves growing certain plants together to naturally repel pests and attract beneficial insects.</p>
+
+              <h3>Effective Companion Plants</h3>
+              <ul>
+                <li><strong>Marigolds:</strong> Repel aphids, whiteflies, and nematodes</li>
+                <li><strong>Basil:</strong> Deters mosquitoes and flies</li>
+                <li><strong>Mint:</strong> Repels ants and rodents</li>
+                <li><strong>Garlic:</strong> Natural fungicide and insect repellent</li>
+              </ul>
+
+              <h3>Implementation Tips</h3>
+              <ul>
+                <li>Plant companion plants around crop borders</li>
+                <li>Intercrop with pest-repelling plants</li>
+                <li>Create habitat for beneficial insects</li>
+                <li>Rotate companion plants seasonally</li>
+              </ul>
+            `,
+            duration: "15 min",
+            completed: false,
+          },
+          {
+            id: 4,
+            type: "video",
+            title: "Organic Pesticide Preparation",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+            duration: "10 min",
+            completed: false,
+          },
+        ],
+      },
+      4: {
+        id: 4,
+        title: "Water Conservation Methods",
+        description: "Efficient irrigation and water management for crops",
+        difficulty: "Beginner",
+        totalDuration: "40 min",
+        contents: [
+          {
+            id: 1,
+            type: "article",
+            title: "Water Conservation Basics",
+            content: `
+              <h2>Why Water Conservation Matters</h2>
+              <p>Water is a precious resource, especially in agriculture. Efficient water use ensures sustainable farming and reduces costs.</p>
+              
+              <h3>Water Conservation Benefits</h3>
+              <ul>
+                <li>Reduces water bills and operational costs</li>
+                <li>Prevents soil erosion and nutrient loss</li>
+                <li>Maintains soil structure and health</li>
+                <li>Ensures water availability during dry seasons</li>
+              </ul>
+
+              <h3>Common Water Waste Sources</h3>
+              <ul>
+                <li>Over-irrigation and poor timing</li>
+                <li>Leaky irrigation systems</li>
+                <li>Inappropriate irrigation methods</li>
+                <li>Lack of soil moisture monitoring</li>
+              </ul>
+            `,
+            duration: "10 min",
+            completed: false,
+          },
+          {
+            id: 2,
+            type: "video",
+            title: "Drip Irrigation Systems",
+            videoUrl: "https://www.youtube.com/embed/ErMHR6Mc4Bk",
+            duration: "15 min",
+            completed: false,
+          },
+          {
+            id: 3,
+            type: "article",
+            title: "Rainwater Harvesting",
+            content: `
+              <h2>Collecting and Storing Rainwater</h2>
+              <p>Rainwater harvesting is an excellent way to supplement irrigation water and reduce dependency on other water sources.</p>
+
+              <h3>Simple Harvesting Methods</h3>
+              <ul>
+                <li><strong>Roof Collection:</strong> Gutters and downspouts to storage tanks</li>
+                <li><strong>Surface Runoff:</strong> Directing water from slopes to storage</li>
+                <li><strong>Pond Systems:</strong> Creating small ponds for water storage</li>
+                <li><strong>Swales:</strong> Landscape features that capture runoff</li>
+              </ul>
+
+              <h3>Storage Solutions</h3>
+              <ul>
+                <li>Plastic tanks for small-scale storage</li>
+                <li>Underground cisterns for larger volumes</li>
+                <li>Lined ponds for community systems</li>
+                <li>Simple barrel systems for home gardens</li>
+              </ul>
+            `,
+            duration: "12 min",
+            completed: false,
+          },
+          {
+            id: 4,
+            type: "video",
+            title: "Mulching for Water Conservation",
+            videoUrl: "https://www.youtube.com/embed/EHwklXhOe9w",
+            duration: "8 min",
+            completed: false,
+          },
+        ],
+      },
     }
 
     let courseInfo = courseData[courseId]
@@ -251,7 +497,7 @@ export default function Course() {
     if (!course) return
 
     const updatedContents = [...course.contents]
-    updatedContents[currentContentIndex].completed = true
+    updatedContents[currentContentIndex].completed = !updatedContents[currentContentIndex].completed
 
     const updatedCourse = { ...course, contents: updatedContents }
     setCourse(updatedCourse)
@@ -413,26 +659,26 @@ export default function Course() {
               <CardContent>
                 {currentContent.type === "video" ? (
                   <div className="space-y-4">
-                    <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <FaPlay className="mx-auto mb-2 text-4xl text-gray-400" />
-                        <p className="text-gray-600">{t("videoPlayer") || "Video Player"}</p>
-                        <p className="text-sm text-gray-500">
-                          {t("videoPlayerNote") || "In a real app, this would be a video player"}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-2">URL: {currentContent.videoUrl}</p>
-                      </div>
+                    <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                      <iframe
+                        src={currentContent.videoUrl}
+                        title={currentContent.title}
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     </div>
                     <div className="text-center">
                       <Button
                         onClick={handleContentComplete}
-                        disabled={currentContent.completed}
                         className="flex items-center gap-2"
+                        variant={currentContent.completed ? "outline" : "default"}
                       >
                         {currentContent.completed ? (
                           <>
                             <FaCheck size={14} />
-                            {t("completed") || "Completed"}
+                            {t("markIncomplete") || "Mark as Incomplete"}
                           </>
                         ) : (
                           t("markAsComplete") || "Mark as Complete"
@@ -449,13 +695,13 @@ export default function Course() {
                     <div className="text-center pt-6 border-t">
                       <Button
                         onClick={handleContentComplete}
-                        disabled={currentContent.completed}
                         className="flex items-center gap-2"
+                        variant={currentContent.completed ? "outline" : "default"}
                       >
                         {currentContent.completed ? (
                           <>
                             <FaCheck size={14} />
-                            {t("completed") || "Completed"}
+                            {t("markIncomplete") || "Mark as Incomplete"}
                           </>
                         ) : (
                           t("markAsComplete") || "Mark as Complete"

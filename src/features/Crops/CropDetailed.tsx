@@ -10,11 +10,13 @@ import Stars from "@/UI/Stars"
 import ReviewShow from "./ReviewShow"
 import { useTranslation } from "react-i18next"
 
+
 export function CropDetailed() {
   const { t } = useTranslation()
   const { reviews } = useReviews()
   const { id } = useParams()
   const { crops } = useCrops()
+
   const cropShow = crops?.find((crop) => crop.id === Number(id))
   const Author = cropShow?.authUsers?.firstName + " " + cropShow?.authUsers?.lastName
 

@@ -9,7 +9,9 @@ export default function Home() {
       <section id="home">
         <LandingCarousel></LandingCarousel>
       </section>
-      <About></About>
+      <section id="about">
+        <About></About>
+      </section>
       <section id="crops">
         <HomeCrops></HomeCrops>
         <HomeRecentCrops></HomeRecentCrops>

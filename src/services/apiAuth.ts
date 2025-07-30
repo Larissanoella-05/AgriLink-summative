@@ -30,9 +30,8 @@ export async function signUp({ email, password, firstName, lastName, phoneNumber
     }
 
     // Step 3: Insert the user data into the custom "authUsers" table
-    // Use a slight delay to ensure the auth user is fully created
-    await new Promise((resolve) => setTimeout(resolve, 100))
-
+    console.log("Inserting user data:", { userId, firstName, lastName, email, phoneNumber })
+    
     const { data: userData, error: userDataError } = await supabase
       .from("authUsers")
       .insert([
@@ -50,14 +49,11 @@ export async function signUp({ email, password, firstName, lastName, phoneNumber
     // Step 4: Handle insertion errors
     if (userDataError) {
       console.error("AuthUsers insert error:", userDataError)
-      // If the authUsers insert fails, we should clean up the auth user
-      try {
-        await supabase.auth.admin.deleteUser(userId)
-      } catch (cleanupError) {
-        console.error("Failed to cleanup auth user:", cleanupError)
-      }
+      console.error("Error details:", JSON.stringify(userDataError, null, 2))
       throw new Error(`Failed to create user profile: ${userDataError.message}`)
     }
+    
+    console.log("User profile created successfully:", userData)
 
     return { data, userData }
   } catch (error) {

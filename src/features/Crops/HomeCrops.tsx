@@ -49,7 +49,7 @@ export default function HomeCrops() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-300 font-semibold mb-6">
               <FaStar className="text-yellow-500" />
-              Premium Quality Crops
+{t('premiumQualityCrops')}
             </div>
 
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 font-display">
@@ -66,8 +66,7 @@ export default function HomeCrops() {
             viewport={{ once: true }}
             className="text-xl text-muted-foreground mt-6 max-w-2xl mx-auto leading-relaxed"
           >
-            Discover fresh, locally-grown produce from Rwanda's finest farmers.
-            Quality guaranteed, community supported.
+            {t('featuredCropsDescription')}
           </motion.p>
         </motion.div>
 

@@ -46,7 +46,7 @@ export default function App() {
                 <Route element={<Quiz></Quiz>} path="quiz/:id"></Route>
                 <Route element={<Crop></Crop>} path="crop/:id"></Route>
                 <Route element={<Contact></Contact>} path="contact"></Route>
-                <Route element={<About></About>} path="about"></Route>
+
                 <Route
                   element={
                     <ProtectedRoute>

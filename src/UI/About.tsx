@@ -7,38 +7,39 @@ import "slick-carousel/slick/slick-theme.css"
 import { useTranslation } from "react-i18next"
 
 const LandingCarousel = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isKinyarwanda = i18n.language === 'rw'
 
   const slides = [
     {
       image: "/Images/carousel/1.jpg",
-      text: t("phrase1"),
-      accent: "Fresh & Local",
+      text: isKinyarwanda ? "Ibihingwa bishya byakuze hafi yawe" : "Fresh crops grown near you",
+      accent: isKinyarwanda ? "Bishya & Byaho" : "Fresh & Local",
     },
     {
       image: "/Images/carousel/2.jpg",
-      text: t("phrase2"),
-      accent: "Community Driven",
+      text: isKinyarwanda ? "Umuryango ufatanyije mu buhinzi" : "Community-driven agriculture",
+      accent: isKinyarwanda ? "Umuryango Ufatanyije" : "Community Driven",
     },
     {
       image: "/Images/carousel/9.jpg",
-      text: t("phrase3"),
-      accent: "Sustainable Future",
+      text: isKinyarwanda ? "Ejo hazaza harambye mu buhinzi" : "Sustainable farming future",
+      accent: isKinyarwanda ? "Ejo hazaza Harambye" : "Sustainable Future",
     },
     {
       image: "/Images/carousel/4.jpg",
-      text: t("phrase4"),
-      accent: "Fair Prices",
+      text: isKinyarwanda ? "Ibiciro byangiza ku bahinzi" : "Fair prices for farmers",
+      accent: isKinyarwanda ? "Ibiciro Byangiza" : "Fair Prices",
     },
     {
       image: "/Images/carousel/5.jpg",
-      text: t("phrase5"),
-      accent: "Growing Together",
+      text: isKinyarwanda ? "Gukura hamwe nk'umuryango" : "Growing together as community",
+      accent: isKinyarwanda ? "Gukura Hamwe" : "Growing Together",
     },
     {
       image: "/Images/carousel/6.jpg",
-      text: t("phrase6"),
-      accent: "Farm to Table",
+      text: isKinyarwanda ? "Kuva mu murima kugeza ku meeza" : "From farm to your table",
+      accent: isKinyarwanda ? "Kuva mu Murima kugeza ku Meeza" : "Farm to Table",
     },
   ]
 
@@ -94,12 +95,14 @@ const LandingCarousel = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-display">
-              Rwanda's Agricultural
-              <span className="block text-yellow-300">Marketplace</span>
+              {isKinyarwanda ? "Isoko ry'Ubuhinzi" : "Rwanda's Agricultural"}
+              <span className="block text-yellow-300">{isKinyarwanda ? "rya Rwanda" : "Marketplace"}</span>
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Connecting farmers with buyers, fostering sustainable agriculture, and building stronger communities
-              across Rwanda.
+              {isKinyarwanda 
+                ? "Guhuza abahinzi n'abaguzi, guteza imbere ubuhinzi burambye, no kubaka umuryango ukomeye mu Rwanda."
+                : "Connecting farmers with buyers, fostering sustainable agriculture, and building stronger communities across Rwanda."
+              }
             </p>
           </motion.div>
 

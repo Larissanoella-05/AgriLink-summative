@@ -53,16 +53,15 @@ export default function Navbar() {
           transition={{ delay: index * 0.1 }}
         >
           {item.type === "scroll" ? (
-            <NavLink
+            <button
               className="relative flex items-center font-medium text-white transition-all duration-300 hover:text-accent group"
-              to={item.to}
               onClick={() => handleNavigation(item.to)}
             >
               <span className="relative">
                 {t(item.key)}
                 <span className="absolute left-0 top-6 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
               </span>
-            </NavLink>
+            </button>
           ) : (
             <NavLink
               to={item.to}

@@ -35,11 +35,20 @@ export function SelectForm({ onChange, value, name, disabled }: SelectFormProps)
           <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="fruits">
             {t("fruits")}
           </SelectItem>
+          <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="herbs">
+            {t("herbs")}
+          </SelectItem>
           <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="grains">
             {t("grains")}
           </SelectItem>
           <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="roots">
-            {t("roots")}
+            {t("roots") || "Roots and Tubers"}
+          </SelectItem>
+          <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="legumes">
+            {t("legumes") || "Legumes"}
+          </SelectItem>
+          <SelectItem className="hover:!bg-green-100 dark:hover:!bg-green-800" value="seeds">
+            {t("seeds")}
           </SelectItem>
         </SelectGroup>
       </SelectContent>

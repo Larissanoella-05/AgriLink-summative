@@ -13,6 +13,8 @@ import { formatCurrency } from "../../utils/helpers"
 import type { Crops } from "../../interfaces"
 import toast from "react-hot-toast"
 import FarmerContact from "../Crops/FarmerContact"
+import { saveOrderToLocalStorage } from "../../utils/localStorage"
+
 
 interface ProductsCropsProps {
   searchQuery: string
@@ -25,8 +27,11 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { crops, isLoading, error } = useCrops()
+
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({})
   const [showContactModal, setShowContactModal] = useState<{ [key: number]: boolean }>({})
+  const [showOrderModal, setShowOrderModal] = useState<{ [key: number]: boolean }>({})
+  const [orderForm, setOrderForm] = useState({ name: '', phone: '' })
 
   const filteredAndSortedCrops = useMemo(() => {
     if (!crops) return []
@@ -99,24 +104,35 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
     }))
   }
 
-  const handleAddToCart = (crop: Crops) => {
-    const quantity = quantities[crop.id] || 1
-    // Here you would typically call an API to add to cart
-    toast.success(`Added ${quantity} ${crop.name}(s) to cart!`)
 
-    // Show contact modal after adding to cart
-    setShowContactModal((prev) => ({ ...prev, [crop.id]: true }))
-  }
 
-  const handlePlaceOrder = (crop: Crops) => {
+  const handleOrderSubmit = (crop: Crops) => {
+    if (!orderForm.name || !orderForm.phone) {
+      toast.error('Please fill in all fields')
+      return
+    }
+
     const quantity = quantities[crop.id] || 1
     const total = crop.price * quantity
 
-    // Here you would typically call an API to create an order
-    toast.success(`Order placed for ${quantity} ${crop.name}(s) - Total: ${formatCurrency(total)}`)
+    // Save order to local storage
+    saveOrderToLocalStorage({
+      cropId: crop.id,
+      cropName: crop.name,
+      farmerId: crop.authUsers?.authUserId || '',
+      farmerName: `${crop.authUsers?.firstName || ''} ${crop.authUsers?.lastName || ''}`.trim(),
+      farmerEmail: crop.authUsers?.email || '',
+      buyerName: orderForm.name,
+      buyerPhone: orderForm.phone,
+      quantity,
+      price: crop.price,
+      total,
+      status: 'pending' as const
+    })
 
-    // Show contact modal after placing order
-    setShowContactModal((prev) => ({ ...prev, [crop.id]: true }))
+    toast.success('Order placed successfully!')
+    setShowOrderModal((prev) => ({ ...prev, [crop.id]: false }))
+    setOrderForm({ name: '', phone: '' })
   }
 
   if (isLoading) {
@@ -263,15 +279,17 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-3">
-                <Button
-                  onClick={() => handleAddToCart(crop)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white gap-2"
+                <Button 
+                  onClick={() => setShowOrderModal((prev) => ({ ...prev, [crop.id]: true }))}
+                  className="bg-green-500 hover:bg-green-600 text-white"
                 >
-                  <ShoppingCart className="h-4 w-4" />
-                  Add to Cart
-                </Button>
-                <Button onClick={() => handlePlaceOrder(crop)} className="bg-green-500 hover:bg-green-600 text-white">
                   Order Now
+                </Button>
+                <Button 
+                  onClick={() => setShowContactModal((prev) => ({ ...prev, [crop.id]: true }))}
+                  className="bg-green-500 hover:bg-green-600 text-white text-xs"
+                >
+                  Contact Farmer
                 </Button>
               </div>
 
@@ -287,6 +305,58 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         ))}
       </div>
 
+      {/* Order Modals */}
+      {Object.entries(showOrderModal).map(([cropId, show]) => {
+        if (!show) return null
+        const crop = filteredAndSortedCrops.find((c) => c.id === Number.parseInt(cropId))
+        if (!crop) return null
+
+        return (
+          <div
+            key={`order-${cropId}`}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={() => setShowOrderModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
+          >
+            <div
+              className="bg-white dark:bg-gray-800 rounded-2xl max-w-md w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-4 border-b">
+                <h3 className="text-lg font-semibold">Place Order</h3>
+                <p className="text-sm text-muted-foreground">{crop.name} - {formatCurrency(crop.price * (quantities[crop.id] || 1))}</p>
+              </div>
+              <div className="p-4 space-y-4">
+                <Input
+                  placeholder="Your Name"
+                  value={orderForm.name}
+                  onChange={(e) => setOrderForm(prev => ({ ...prev, name: e.target.value }))}
+                />
+                <Input
+                  placeholder="Phone Number"
+                  value={orderForm.phone}
+                  onChange={(e) => setOrderForm(prev => ({ ...prev, phone: e.target.value }))}
+                />
+              </div>
+              <div className="p-4 border-t flex gap-3">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowOrderModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
+                  className="flex-1"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  onClick={() => handleOrderSubmit(crop)}
+                  className="flex-1 bg-green-500 hover:bg-green-600"
+                >
+                  Submit Order
+                </Button>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+
       {/* Contact Modals */}
       {Object.entries(showContactModal).map(([cropId, show]) => {
         if (!show) return null
@@ -295,7 +365,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
 
         return (
           <div
-            key={cropId}
+            key={`contact-${cropId}`}
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             onClick={() => setShowContactModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
           >
@@ -304,8 +374,8 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">Order Placed Successfully!</h3>
-                <p className="text-sm text-muted-foreground">Contact the farmer for delivery details</p>
+                <h3 className="text-lg font-semibold">Contact Farmer</h3>
+                <p className="text-sm text-muted-foreground">Get in touch for more details</p>
               </div>
               <div className="p-4">
                 <FarmerContact farmer={crop.authUsers || null} location={crop.location} />

@@ -17,8 +17,8 @@ const categories = [
   { id: "fruits", name: "Fruits", icon: "🍎" },
   { id: "grains", name: "Grains", icon: "🌾" },
   { id: "herbs", name: "Herbs", icon: "🌿" },
-  { id: "dairy", name: "Dairy", icon: "🥛" },
-  { id: "meat", name: "Meat", icon: "🥩" },
+  { id: "roots", name: "Roots and Tubers", icon: "🥔" },
+  { id: "legumes", name: "Legumes", icon: "🫘" },
   { id: "organic", name: "Organic", icon: "🌱" },
   { id: "seeds", name: "Seeds", icon: "🌰" },
 ]

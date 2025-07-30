@@ -16,6 +16,7 @@ interface ISignUpFormInput {
   firstName: string;
   lastName: string;
   signupEmail: string;
+  phoneNumber: string;
   signupPassword: string;
   confirmPassword: string;
 }
@@ -73,11 +74,16 @@ export default function Register({
         lastName: data.lastName,
         email: data.signupEmail,
         password: data.signupPassword,
+        phoneNumber: data.phoneNumber,
       },
       {
-        onSettled: () => {
+        onSuccess: () => {
           reset();
           setOpen(false);
+        },
+        onError: (error) => {
+          console.error("Signup failed:", error);
+          // Don't close modal on error so user can retry
         },
       },
     );
@@ -233,6 +239,19 @@ export default function Register({
                 />
                 <span className="text-sm text-red-400">
                   {signupErrors.signupEmail && signupErrors.signupEmail.message}
+                </span>
+              </div>
+              <div className="field">
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  {...registerSignup("phoneNumber", {
+                    required: "Phone number is required",
+                  })}
+                  className={signupErrors.phoneNumber ? "error" : ""}
+                />
+                <span className="text-sm text-red-400">
+                  {signupErrors.phoneNumber && signupErrors.phoneNumber.message}
                 </span>
               </div>
               <div className="field">

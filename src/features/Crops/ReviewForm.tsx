@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next"
 import Stars from "@/UI/Stars"
 import { useState } from "react"
 import { useCreateReview } from "../Reviews/useCreateReview"
+import { saveReviewToLocalStorage } from "../../utils/localStorage"
+import { useCrops } from "./useCrops"
 
 interface ReviewFormData {
   name: string
@@ -31,10 +33,25 @@ export function AddReview({
   } = useForm<ReviewFormData>()
 
   const { createReview, isCreating } = useCreateReview()
+  const { crops } = useCrops()
   const { t } = useTranslation()
   const [rating, setRating] = useState<number>(0)
 
   const onSubmit = (data: ReviewFormData) => {
+    const crop = crops?.find(c => c.id === id)
+    
+    // Save to local storage
+    saveReviewToLocalStorage({
+      cropId: id,
+      cropName: crop?.name || 'Unknown Crop',
+      farmerId: crop?.authUsers?.authUserId || '',
+      name: data.name,
+      email: data.email,
+      comment: data.comment,
+      rate: rating
+    })
+
+    // Also save to database
     createReview(
       {
         ...data,
