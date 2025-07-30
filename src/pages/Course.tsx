@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
-import { FaBook, FaVideo, FaClock, FaArrowLeft, FaArrowRight, FaCheck, FaPlay } from "react-icons/fa"
+import { FaBook, FaVideo, FaClock, FaArrowLeft, FaArrowRight, FaCheck } from "react-icons/fa"
 
 interface CourseContent {
   id: number
