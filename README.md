@@ -1,12 +1,12 @@
-# AgriLink Rwanda 🌾
+# AgriLink Rwanda 
 
 A modern agricultural marketplace connecting farmers with buyers across Rwanda. Built with React, TypeScript, and Supabase.
 
-## 🚀 Live Demo
+## Live Demo
 
 [Visit AgriLink Rwanda](https://agrilink-rwanda.netlify.app)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
@@ -19,7 +19,7 @@ A modern agricultural marketplace connecting farmers with buyers across Rwanda. 
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 
-## ✨ Features
+##  Features
 
 - **Multilingual Support**: English and Kinyarwanda
 - **Dark/Light Theme**: Toggle between themes
@@ -47,7 +47,7 @@ npm --version
 git --version
 ```
 
-## 📦 Installation
+##  Installation
 
 ### Step 1: Clone the Repository
 ```bash
@@ -69,7 +69,7 @@ This will install all required packages including:
 - React Query
 - And many more...
 
-## 🔐 Environment Setup
+##  Environment Setup
 
 ### Step 1: Create Environment File
 Create a `.env` file in the root directory:
@@ -137,7 +137,7 @@ CREATE TABLE reviews (
 );
 ```
 
-## 🏃‍♂️ Running the Project
+##  Running the Project
 
 ### Step 1: Start Development Server
 ```bash
@@ -156,7 +156,7 @@ http://localhost:5173
 - Verify database connections work
 - Test theme switching and language toggle
 
-## 🔨 Building for Production
+##  Building for Production
 
 ### Step 1: Run Type Check
 ```bash
@@ -175,7 +175,7 @@ npm run preview
 
 The build files will be in the `dist` folder.
 
-## 🚀 Deployment
+##  Deployment
 
 ### Deploy to Netlify
 
@@ -204,7 +204,7 @@ VITE_SUPABASE_URL=your_production_supabase_url
 VITE_SUPABASE_ANON_KEY=your_production_supabase_key
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 AgriLink-summative/
@@ -241,7 +241,7 @@ AgriLink-summative/
 - **Icons**: Lucide React, React Icons
 - **Internationalization**: React i18next
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/new-feature`
@@ -249,7 +249,7 @@ AgriLink-summative/
 4. Push to branch: `git push origin feature/new-feature`
 5. Submit a pull request
 
-## 📝 Available Scripts
+##  Available Scripts
 
 ```bash
 npm run dev          # Start development server
@@ -259,7 +259,7 @@ npm run lint         # Run ESLint
 npx tsc --noEmit     # Type check without building
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues:
 
@@ -275,7 +275,7 @@ npx tsc --noEmit     # Type check without building
 - Ensure Supabase database tables are created
 - Check network connectivity
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
@@ -286,4 +286,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**Happy Coding! 🚀**
+**Happy Coding!**
