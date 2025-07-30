@@ -7,7 +7,7 @@ import { Card, CardContent } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
 import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
-import { Eye, MapPin, User, Calendar, ShoppingCart, Plus, Minus } from "lucide-react"
+import { Eye, MapPin, User, Calendar, Plus, Minus } from "lucide-react"
 import { useCrops } from "../Crops/useCrops"
 import { formatCurrency } from "../../utils/helpers"
 import type { Crops } from "../../interfaces"
@@ -119,7 +119,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
     saveOrderToLocalStorage({
       cropId: crop.id,
       cropName: crop.name,
-      farmerId: crop.authUsers?.authUserId || '',
+      farmerId: crop.authUsers?.id || '',
       farmerName: `${crop.authUsers?.firstName || ''} ${crop.authUsers?.lastName || ''}`.trim(),
       farmerEmail: crop.authUsers?.email || '',
       buyerName: orderForm.name,
