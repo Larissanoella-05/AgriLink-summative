@@ -163,5 +163,20 @@
   "phrase3": "Sustainable farming future",
   "phrase4": "Fair prices for farmers",
   "phrase5": "Growing together as community",
-  "phrase6": "From farm to your table"
+  "phrase6": "From farm to your table",
+  "orderNow": "Order Now",
+  "contactFarmer": "Contact Farmer",
+  "selectSort": "Select sorting",
+  "price-low": "Price: Low to High",
+  "price-high": "Price: High to Low",
+  "name-asc": "Name: A to Z",
+  "name-desc": "Name: Z to A",
+  "quantity": "Quantity",
+  "totalPrice": "Total Price",
+  "placeOrder": "Place Order",
+  "yourName": "Your Name",
+  "phoneNumber": "Phone Number",
+  "submitOrder": "Submit Order",
+  "close": "Close",
+  "contactForDetails": "Get in touch for more details"
 }

@@ -247,7 +247,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
 
               {/* Quantity Selector */}
               <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
-                <span className="text-sm font-medium">Quantity:</span>
+                <span className="text-sm font-medium">{t("quantity") || "Quantity"}:</span>
                 <div className="flex items-center gap-2">
                   <Button
                     size="sm"
@@ -283,19 +283,19 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                   onClick={() => setShowOrderModal((prev) => ({ ...prev, [crop.id]: true }))}
                   className="bg-green-500 hover:bg-green-600 text-white"
                 >
-                  Order Now
+                  {t("orderNow") || "Order Now"}
                 </Button>
                 <Button 
                   onClick={() => setShowContactModal((prev) => ({ ...prev, [crop.id]: true }))}
                   className="bg-green-500 hover:bg-green-600 text-white text-xs"
                 >
-                  Contact Farmer
+                  {t("contactFarmer") || "Contact Farmer"}
                 </Button>
               </div>
 
               {/* Total Price Display */}
               <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-3 text-center">
-                <p className="text-sm text-green-600 dark:text-green-400">Total Price</p>
+                <p className="text-sm text-green-600 dark:text-green-400">{t("totalPrice") || "Total Price"}</p>
                 <p className="text-xl font-bold text-green-700 dark:text-green-300">
                   {formatCurrency(crop.price * (quantities[crop.id] || 1))}
                 </p>
@@ -322,17 +322,17 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">Place Order</h3>
+                <h3 className="text-lg font-semibold">{t("placeOrder") || "Place Order"}</h3>
                 <p className="text-sm text-muted-foreground">{crop.name} - {formatCurrency(crop.price * (quantities[crop.id] || 1))}</p>
               </div>
               <div className="p-4 space-y-4">
                 <Input
-                  placeholder="Your Name"
+                  placeholder={t("yourName") || "Your Name"}
                   value={orderForm.name}
                   onChange={(e) => setOrderForm(prev => ({ ...prev, name: e.target.value }))}
                 />
                 <Input
-                  placeholder="Phone Number"
+                  placeholder={t("phoneNumber") || "Phone Number"}
                   value={orderForm.phone}
                   onChange={(e) => setOrderForm(prev => ({ ...prev, phone: e.target.value }))}
                 />
@@ -343,13 +343,13 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                   onClick={() => setShowOrderModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
                   className="flex-1"
                 >
-                  Cancel
+                  {t("cancel") || "Cancel"}
                 </Button>
                 <Button
                   onClick={() => handleOrderSubmit(crop)}
                   className="flex-1 bg-green-500 hover:bg-green-600"
                 >
-                  Submit Order
+                  {t("submitOrder") || "Submit Order"}
                 </Button>
               </div>
             </div>
@@ -374,8 +374,8 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">Contact Farmer</h3>
-                <p className="text-sm text-muted-foreground">Get in touch for more details</p>
+                <h3 className="text-lg font-semibold">{t("contactFarmer") || "Contact Farmer"}</h3>
+                <p className="text-sm text-muted-foreground">{t("contactForDetails") || "Get in touch for more details"}</p>
               </div>
               <div className="p-4">
                 <FarmerContact farmer={crop.authUsers || null} location={crop.location} />
@@ -385,7 +385,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                   onClick={() => setShowContactModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
                   className="w-full"
                 >
-                  Close
+                  {t("close") || "Close"}
                 </Button>
               </div>
             </div>
