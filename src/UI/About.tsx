@@ -77,9 +77,9 @@ const AgricultureHero = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Hero gradient background */}
+      {}
       <div className="hero-gradient py-20">
-        {/* Decorative elements */}
+        {}
         <div className="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-float"></div>
         <div
           className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-2xl animate-float"
@@ -87,7 +87,7 @@ const AgricultureHero = () => {
         ></div>
 
         <div className="container mx-auto px-4 relative">
-          {/* Section header */}
+          {}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,10 +128,10 @@ const AgricultureHero = () => {
                       whileHover={{ scale: 1.05 }}
                     />
 
-                    {/* Gradient overlay */}
+                    {}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-                    {/* Content overlay */}
+                    {}
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 p-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ const AgricultureHero = () => {
                       </div>
                     </motion.div>
 
-                    {/* Hover effect */}
+                    {}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ opacity: 0 }}
