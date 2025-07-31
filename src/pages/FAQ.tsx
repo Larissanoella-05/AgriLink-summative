@@ -12,7 +12,7 @@ const FAQ = () => {
   return (
     <div className="mt-[90px] min-h-screen bg-white p-8">
       <div className="mx-auto max-w-4xl">
-        {/* Header Section */}
+        {}
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-4xl font-bold text-black">
             {t("faq.title")}
@@ -20,7 +20,7 @@ const FAQ = () => {
           <p className="text-gray-600">{t("faq.subtitle")}</p>
         </div>
 
-        {/* Image section remains the same */}
+        {}
         <div className="mb-16 flex justify-center">
           <div className="relative">
             <img
@@ -34,7 +34,7 @@ const FAQ = () => {
           </div>
         </div>
 
-        {/* Accordion Section */}
+        {}
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-black hover:font-extrabold hover:text-[#ffcb05]">
