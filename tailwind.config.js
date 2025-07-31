@@ -61,7 +61,7 @@ export default {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
         },
-        // Beautiful agriculture theme colors
+        
         emerald: {
           50: '#ecfdf5',
           100: '#d1fae5',
