@@ -9,12 +9,11 @@ A modern agricultural marketplace connecting farmers with buyers across Rwanda. 
 ## Table of Contents
 
 - [Features](#features)
-- [Prerequisites](#prerequisites)
+- [Prerequisites](#Prerequisites)
 - [Installation](#installation)
 - [Environment Setup](#environment-setup)
 - [Running the Project](#running-the-project)
 - [Building for Production](#building-for-production)
-- [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 
@@ -30,7 +29,7 @@ A modern agricultural marketplace connecting farmers with buyers across Rwanda. 
 - **Responsive Design**: Works on all devices
 - **Real-time Updates**: Using React Query for data management
 
-## 🔧 Prerequisites
+##  Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -102,7 +101,7 @@ The build files will be in the `dist` folder.
 
 
 
-## 🛠 Technologies Used
+##  Technologies Used
 
 - **Frontend**: React 18, TypeScript, Vite
 - **Styling**: Tailwind CSS, Radix UI
