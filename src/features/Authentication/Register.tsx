@@ -5,13 +5,11 @@ import { useTranslation } from "react-i18next";
 import useLoginUser from "./useLoginUser";
 import useSignup from "./useSignup";
 
-// Define the interface for form data for Login
 interface ILoginFormInput {
   loginEmail: string;
   passwordEmail: string;
 }
 
-// Define the interface for form data for Signup
 interface ISignUpFormInput {
   firstName: string;
   lastName: string;
@@ -29,19 +27,19 @@ export default function Register({
   const { login, isLogin: loggingIn } = useLoginUser();
   const { signingUp, isSigningUp } = useSignup();
   const { t } = useTranslation();
-  const [isLogin, setIsLogin] = useState(true); // State to toggle between login and signup
+  const [isLogin, setIsLogin] = useState(true); 
 
   const handleLoginClick = () => setIsLogin(true);
   const handleSignupClick = () => setIsLogin(false);
 
-  // react-hook-form setup for Login
+  
   const {
     register: registerLogin,
     handleSubmit: handleSubmitLogin,
     formState: { errors: loginErrors },
   } = useForm<ILoginFormInput>();
 
-  // react-hook-form setup for Signup
+  
   const {
     register: registerSignup,
     handleSubmit: handleSubmitSignup,
@@ -83,7 +81,7 @@ export default function Register({
         },
         onError: (error) => {
           console.error("Signup failed:", error);
-          // Don't close modal on error so user can retry
+        
         },
       },
     );
@@ -91,7 +89,7 @@ export default function Register({
 
   return (
     <div className="wrapper">
-      {/* Title Text */}
+      {}
       <div className="title-text">
         {isLogin ? (
           <div className="w-full">
@@ -112,7 +110,7 @@ export default function Register({
         )}
       </div>
 
-      {/* Slide Controls */}
+      {}
       <div className="slide-controls">
         <input
           type="radio"
@@ -137,7 +135,7 @@ export default function Register({
         <div className="slider-tab"></div>
       </div>
 
-      {/* Form Container */}
+      {}
       <div className="form-container">
         <div className="form-inner">
           {isLogin ? (
@@ -276,9 +274,9 @@ export default function Register({
                     required: t("confirmPasswordInputAlert"),
                     validate: (value) => {
                       if (value !== passwordSignup) {
-                        return t("passwordsMatchAlert"); // Return error message if passwords don't match
+                        return t("passwordsMatchAlert"); 
                       }
-                      return true; // Return true if passwords match
+                      return true; 
                     },
                   })}
                   className={signupErrors.confirmPassword ? "error" : ""}
