@@ -104,9 +104,9 @@ function UpdateUserInfo() {
             </div>
           </motion.div>
 
-          {/* Form Fields */}
+          {}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Email Field */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -121,7 +121,7 @@ function UpdateUserInfo() {
               <p className="text-xs text-muted-foreground">Email cannot be changed</p>
             </motion.div>
 
-            {/* Phone Number Field */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -142,7 +142,7 @@ function UpdateUserInfo() {
               <p className="text-xs text-muted-foreground">Buyers will use this to contact you directly</p>
             </motion.div>
 
-            {/* First Name Field */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -161,7 +161,7 @@ function UpdateUserInfo() {
               />
             </motion.div>
 
-            {/* Last Name Field */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -181,7 +181,7 @@ function UpdateUserInfo() {
             </motion.div>
           </div>
 
-          {/* Contact Information Notice */}
+          {}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ function UpdateUserInfo() {
             </div>
           </motion.div>
 
-          {/* Submit Button */}
+          {}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
