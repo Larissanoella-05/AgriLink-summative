@@ -9,7 +9,7 @@ import useUser from "@/features/Authentication/useUser"
 import { useState, useEffect } from "react"
 import supabase from "@/services/supabase"
 import { useReviews } from "@/features/Reviews/useReviews"
-import { getOrdersByFarmerId, getReviewsByFarmerId, updateOrderStatus, type LocalOrder, type LocalReview } from "@/utils/localStorage"
+import { getOrdersByFarmerId, getReviewsByFarmerId, updateOrderStatus, getOrdersFromLocalStorage, getReviewsFromLocalStorage, type LocalOrder, type LocalReview } from "@/utils/localStorage"
 
 
 
@@ -26,6 +26,13 @@ export default function Analytics() {
     
     const orders = getOrdersByFarmerId(user.id)
     const reviews = getReviewsByFarmerId(user.id)
+    
+    // Debug logging
+    console.log('Current user ID:', user.id)
+    console.log('All orders from localStorage:', getOrdersFromLocalStorage())
+    console.log('Filtered orders for this farmer:', orders)
+    console.log('All reviews from localStorage:', getReviewsFromLocalStorage())
+    console.log('Filtered reviews for this farmer:', reviews)
     
     setLocalOrders(orders)
     setLocalReviews(reviews)
