@@ -11,7 +11,6 @@ A modern agricultural marketplace connecting farmers with buyers across Rwanda. 
 - [Features](#features)
 - [Prerequisites](#Prerequisites)
 - [Installation](#installation)
-- [Environment Setup](#environment-setup)
 - [Running the Project](#running-the-project)
 - [Building for Production](#building-for-production)
 - [Technologies Used](#technologies-used)
