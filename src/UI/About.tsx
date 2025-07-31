@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useTranslation } from "react-i18next"
 
-const LandingCarousel = () => {
+const AgricultureHero = () => {
   const { i18n } = useTranslation()
   const isKinyarwanda = i18n.language === 'rw'
 
@@ -169,4 +169,4 @@ const LandingCarousel = () => {
   )
 }
 
-export default LandingCarousel
+export default AgricultureHero
