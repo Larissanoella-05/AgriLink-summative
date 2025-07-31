@@ -1,4 +1,4 @@
-// Local storage utilities for orders and reviews
+
 
 export interface LocalOrder {
   id: string
@@ -28,7 +28,7 @@ export interface LocalReview {
   timestamp: string
 }
 
-// Orders
+
 export const saveOrderToLocalStorage = (order: Omit<LocalOrder, 'id' | 'timestamp'>) => {
   const orders = getOrdersFromLocalStorage()
   const newOrder: LocalOrder = {
@@ -51,7 +51,7 @@ export const getOrdersByFarmerId = (farmerId: string): LocalOrder[] => {
   return orders.filter(order => order.farmerId === farmerId)
 }
 
-// Reviews
+
 export const saveReviewToLocalStorage = (review: Omit<LocalReview, 'id' | 'timestamp'>) => {
   const reviews = getReviewsFromLocalStorage()
   const newReview: LocalReview = {
@@ -74,7 +74,7 @@ export const getReviewsByFarmerId = (farmerId: string): LocalReview[] => {
   return reviews.filter(review => review.farmerId === farmerId)
 }
 
-// Update order status
+
 export const updateOrderStatus = (orderId: string, status: 'pending' | 'completed') => {
   const orders = getOrdersFromLocalStorage()
   const updatedOrders = orders.map(order => 
