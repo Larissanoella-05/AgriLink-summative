@@ -31,31 +31,21 @@ export function LanguageSwitch() {
               ? isMobile
                 ? "EN 🇺🇸"
                 : "English 🇺🇸"
-              : language === "fr"
+              : language === "rw"
                 ? isMobile
-                  ? "FR 🇫🇷"
-                  : "Français 🇫🇷"
-                : language === "es"
-                  ? isMobile
-                    ? "ES 🇪🇸"
-                    : "Español 🇪🇸"
-                  : "Select Language"
+                  ? "RW 🇷🇼"
+                  : "Kinyarwanda 🇷🇼"
+                : "Select Language"
           }
         />
       </SelectTrigger>
       <SelectContent className="bg-white dark:bg-gray-800 border dark:border-gray-700">
         <SelectGroup>
-          <SelectItem value="rw" className="hover:!bg-[#ffcb05] text-black dark:text-white">
-            {isMobile ? "RW 🇷🇼" : "Kinyarwanda 🇷🇼"}
-          </SelectItem>
           <SelectItem value="en" className="hover:!bg-[#ffcb05] text-black dark:text-white">
             {isMobile ? "EN 🇺🇸" : "English 🇺🇸"}
           </SelectItem>
-          <SelectItem className="hover:!bg-[#ffcb05] text-black dark:text-white" value="fr">
-            {isMobile ? "FR 🇫🇷" : "Français 🇫🇷"}
-          </SelectItem>
-          <SelectItem className="hover:!bg-[#ffcb05] text-black dark:text-white" value="es">
-            {isMobile ? "ES 🇪🇸" : "Español 🇪🇸"}
+          <SelectItem value="rw" className="hover:!bg-[#ffcb05] text-black dark:text-white">
+            {isMobile ? "RW 🇷🇼" : "Kinyarwanda 🇷🇼"}
           </SelectItem>
         </SelectGroup>
       </SelectContent>
