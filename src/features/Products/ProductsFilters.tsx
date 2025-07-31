@@ -69,7 +69,7 @@ export default function ProductsFilters({
 
       {isExpanded && (
         <CardContent className="space-y-6">
-          {/* Categories */}
+          {}
           <div>
             <Label className="text-sm font-medium mb-3 block">{t("categories") || "Categories"}</Label>
             <div className="grid grid-cols-2 gap-2">
@@ -90,7 +90,7 @@ export default function ProductsFilters({
 
           <Separator />
 
-          {/* Price Range */}
+          {}
           <div>
             <Label className="text-sm font-medium mb-3 block">{t("priceRange") || "Price Range"}</Label>
             <div className="grid grid-cols-2 gap-2">
@@ -123,7 +123,7 @@ export default function ProductsFilters({
             </div>
           </div>
 
-          {/* Active Filters */}
+          {}
           {selectedCategories.length > 0 && (
             <>
               <Separator />
