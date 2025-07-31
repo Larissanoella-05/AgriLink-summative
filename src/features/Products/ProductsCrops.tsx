@@ -47,21 +47,21 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         if (!matchesSearch) return false
       }
 
-      // Category filter
+      
       if (selectedCategories.length > 0) {
         if (!crop.category || !selectedCategories.includes(crop.category.toLowerCase())) {
           return false
         }
       }
 
-      // Price range filter
+  
       if (priceRange.min && crop.price < Number.parseFloat(priceRange.min)) return false
       if (priceRange.max && crop.price > Number.parseFloat(priceRange.max)) return false
 
       return true
     })
 
-    // Sort the filtered results
+  
     filtered.sort((a: Crops, b: Crops) => {
       switch (sortBy) {
         case "newest":
@@ -115,7 +115,6 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
     const quantity = quantities[crop.id] || 1
     const total = crop.price * quantity
 
-    // Save order to local storage
     saveOrderToLocalStorage({
       cropId: crop.id,
       cropName: crop.name,
@@ -245,7 +244,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                 </Button>
               </div>
 
-              {/* Quantity Selector */}
+              {}
               <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
                 <span className="text-sm font-medium">{t("quantity") || "Quantity"}:</span>
                 <div className="flex items-center gap-2">
@@ -277,7 +276,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {}
               <div className="grid grid-cols-2 gap-3">
                 <Button 
                   onClick={() => setShowOrderModal((prev) => ({ ...prev, [crop.id]: true }))}
@@ -293,7 +292,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                 </Button>
               </div>
 
-              {/* Total Price Display */}
+              {}
               <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-3 text-center">
                 <p className="text-sm text-green-600 dark:text-green-400">{t("totalPrice") || "Total Price"}</p>
                 <p className="text-xl font-bold text-green-700 dark:text-green-300">
@@ -305,7 +304,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         ))}
       </div>
 
-      {/* Order Modals */}
+      {}
       {Object.entries(showOrderModal).map(([cropId, show]) => {
         if (!show) return null
         const crop = filteredAndSortedCrops.find((c) => c.id === Number.parseInt(cropId))
@@ -357,7 +356,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         )
       })}
 
-      {/* Contact Modals */}
+      {}
       {Object.entries(showContactModal).map(([cropId, show]) => {
         if (!show) return null
         const crop = filteredAndSortedCrops.find((c) => c.id === Number.parseInt(cropId))
