@@ -483,7 +483,7 @@ export default function Course() {
 
     let courseInfo = courseData[courseId]
 
-    // Load saved progress if exists
+    
     if (savedProgress) {
       const progress = JSON.parse(savedProgress)
       courseInfo = { ...courseInfo, contents: progress }
@@ -501,10 +501,10 @@ export default function Course() {
     const updatedCourse = { ...course, contents: updatedContents }
     setCourse(updatedCourse)
 
-    // Save progress to localStorage
+    
     localStorage.setItem(`course-${course.id}-progress`, JSON.stringify(updatedContents))
 
-    // Update overall course progress in main courses list
+    
     const savedCourses = localStorage.getItem("agrilink-courses")
     if (savedCourses) {
       const courses = JSON.parse(savedCourses)
@@ -545,7 +545,7 @@ export default function Course() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      {}
       <div className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -584,7 +584,7 @@ export default function Course() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar - Course Contents */}
+          {}
           <div className="lg:col-span-1">
             <Card>
               <CardHeader>
@@ -635,7 +635,7 @@ export default function Course() {
             </Card>
           </div>
 
-          {/* Main Content */}
+          {}
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
@@ -967,7 +967,7 @@ export default function Course() {
               </CardContent>
             </Card>
 
-            {/* Navigation */}
+            {}
             <div className="flex justify-between mt-6">
               <Button
                 variant="outline"
