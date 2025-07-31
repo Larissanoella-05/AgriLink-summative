@@ -7,7 +7,7 @@ import { Card, CardContent } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
 import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
-import { Eye, MapPin, User, Calendar, Plus, Minus } from "lucide-react"
+import { Eye, MapPin, User, Calendar, ShoppingCart, Plus, Minus } from "lucide-react"
 import { useCrops } from "../Crops/useCrops"
 import { formatCurrency } from "../../utils/helpers"
 import type { Crops } from "../../interfaces"
@@ -47,21 +47,21 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         if (!matchesSearch) return false
       }
 
-      
+      // Category filter
       if (selectedCategories.length > 0) {
         if (!crop.category || !selectedCategories.includes(crop.category.toLowerCase())) {
           return false
         }
       }
 
-  
+      // Price range filter
       if (priceRange.min && crop.price < Number.parseFloat(priceRange.min)) return false
       if (priceRange.max && crop.price > Number.parseFloat(priceRange.max)) return false
 
       return true
     })
 
-  
+    // Sort the filtered results
     filtered.sort((a: Crops, b: Crops) => {
       switch (sortBy) {
         case "newest":
@@ -115,10 +115,11 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
     const quantity = quantities[crop.id] || 1
     const total = crop.price * quantity
 
+    // Save order to local storage
     saveOrderToLocalStorage({
       cropId: crop.id,
       cropName: crop.name,
-      farmerId: crop.authUsers?.id || '',
+      farmerId: crop.authUsers?.authUserId || '',
       farmerName: `${crop.authUsers?.firstName || ''} ${crop.authUsers?.lastName || ''}`.trim(),
       farmerEmail: crop.authUsers?.email || '',
       buyerName: orderForm.name,
@@ -244,9 +245,9 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                 </Button>
               </div>
 
-              {}
+              {/* Quantity Selector */}
               <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
-                <span className="text-sm font-medium">{t("quantity") || "Quantity"}:</span>
+                <span className="text-sm font-medium">Quantity:</span>
                 <div className="flex items-center gap-2">
                   <Button
                     size="sm"
@@ -276,25 +277,25 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                 </div>
               </div>
 
-              {}
+              {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-3">
                 <Button 
                   onClick={() => setShowOrderModal((prev) => ({ ...prev, [crop.id]: true }))}
                   className="bg-green-500 hover:bg-green-600 text-white"
                 >
-                  {t("orderNow") || "Order Now"}
+                  Order Now
                 </Button>
                 <Button 
                   onClick={() => setShowContactModal((prev) => ({ ...prev, [crop.id]: true }))}
                   className="bg-green-500 hover:bg-green-600 text-white text-xs"
                 >
-                  {t("contactFarmer") || "Contact Farmer"}
+                  Contact Farmer
                 </Button>
               </div>
 
-              {}
+              {/* Total Price Display */}
               <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-3 text-center">
-                <p className="text-sm text-green-600 dark:text-green-400">{t("totalPrice") || "Total Price"}</p>
+                <p className="text-sm text-green-600 dark:text-green-400">Total Price</p>
                 <p className="text-xl font-bold text-green-700 dark:text-green-300">
                   {formatCurrency(crop.price * (quantities[crop.id] || 1))}
                 </p>
@@ -304,7 +305,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         ))}
       </div>
 
-      {}
+      {/* Order Modals */}
       {Object.entries(showOrderModal).map(([cropId, show]) => {
         if (!show) return null
         const crop = filteredAndSortedCrops.find((c) => c.id === Number.parseInt(cropId))
@@ -321,17 +322,17 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">{t("placeOrder") || "Place Order"}</h3>
+                <h3 className="text-lg font-semibold">Place Order</h3>
                 <p className="text-sm text-muted-foreground">{crop.name} - {formatCurrency(crop.price * (quantities[crop.id] || 1))}</p>
               </div>
               <div className="p-4 space-y-4">
                 <Input
-                  placeholder={t("yourName") || "Your Name"}
+                  placeholder="Your Name"
                   value={orderForm.name}
                   onChange={(e) => setOrderForm(prev => ({ ...prev, name: e.target.value }))}
                 />
                 <Input
-                  placeholder={t("phoneNumber") || "Phone Number"}
+                  placeholder="Phone Number"
                   value={orderForm.phone}
                   onChange={(e) => setOrderForm(prev => ({ ...prev, phone: e.target.value }))}
                 />
@@ -342,13 +343,13 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                   onClick={() => setShowOrderModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
                   className="flex-1"
                 >
-                  {t("cancel") || "Cancel"}
+                  Cancel
                 </Button>
                 <Button
                   onClick={() => handleOrderSubmit(crop)}
                   className="flex-1 bg-green-500 hover:bg-green-600"
                 >
-                  {t("submitOrder") || "Submit Order"}
+                  Submit Order
                 </Button>
               </div>
             </div>
@@ -356,7 +357,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
         )
       })}
 
-      {}
+      {/* Contact Modals */}
       {Object.entries(showContactModal).map(([cropId, show]) => {
         if (!show) return null
         const crop = filteredAndSortedCrops.find((c) => c.id === Number.parseInt(cropId))
@@ -373,8 +374,8 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">{t("contactFarmer") || "Contact Farmer"}</h3>
-                <p className="text-sm text-muted-foreground">{t("contactForDetails") || "Get in touch for more details"}</p>
+                <h3 className="text-lg font-semibold">Contact Farmer</h3>
+                <p className="text-sm text-muted-foreground">Get in touch for more details</p>
               </div>
               <div className="p-4">
                 <FarmerContact farmer={crop.authUsers || null} location={crop.location} />
@@ -384,7 +385,7 @@ export default function ProductsCrops({ searchQuery, selectedCategories, sortBy,
                   onClick={() => setShowContactModal((prev) => ({ ...prev, [Number.parseInt(cropId)]: false }))}
                   className="w-full"
                 >
-                  {t("close") || "Close"}
+                  Close
                 </Button>
               </div>
             </div>

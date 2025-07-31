@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
 
-const AgricultureShowcase = () => {
+const LandingCarousel = () => {
   const { t } = useTranslation()
   const slides = [
     {
@@ -78,7 +78,7 @@ const AgricultureShowcase = () => {
               <div className="overflow-hidden rounded-lg">
                 <img
                   src={slide.image || "/placeholder.svg"}
-                  alt={`Agriculture slide ${index}`}
+                  alt={`Slide ${index}`}
                   className="h-[550px] w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
@@ -93,4 +93,4 @@ const AgricultureShowcase = () => {
   )
 }
 
-export default AgricultureShowcase
+export default LandingCarousel

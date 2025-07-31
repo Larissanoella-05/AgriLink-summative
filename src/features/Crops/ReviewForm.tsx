@@ -40,18 +40,18 @@ export function AddReview({
   const onSubmit = (data: ReviewFormData) => {
     const crop = crops?.find(c => c.id === id)
     
-    
+    // Save to local storage
     saveReviewToLocalStorage({
       cropId: id,
       cropName: crop?.name || 'Unknown Crop',
-      farmerId: crop?.authUsers?.id || '',
+      farmerId: crop?.authUsers?.authUserId || '',
       name: data.name,
       email: data.email,
       comment: data.comment,
       rate: rating
     })
 
-    
+    // Also save to database
     createReview(
       {
         ...data,

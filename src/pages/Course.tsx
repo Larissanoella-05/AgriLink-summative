@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
-import { FaBook, FaVideo, FaClock, FaArrowLeft, FaArrowRight, FaCheck } from "react-icons/fa"
+import { FaBook, FaVideo, FaClock, FaArrowLeft, FaArrowRight, FaCheck, FaPlay } from "react-icons/fa"
 
 interface CourseContent {
   id: number
@@ -34,6 +34,7 @@ export default function Course() {
   const [course, setCourse] = useState<Course | null>(null)
 
   useEffect(() => {
+    
     const courseId = Number.parseInt(id || "1")
     const savedProgress = localStorage.getItem(`course-${courseId}-progress`)
 
@@ -271,7 +272,7 @@ export default function Course() {
             id: 2,
             type: "video",
             title: "Soil Testing Methods",
-            videoUrl: "https://www.youtube.com/embed/DCJw-CoUi7Q",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
             duration: "20 min",
             completed: false,
           },
@@ -315,7 +316,7 @@ export default function Course() {
             id: 4,
             type: "video",
             title: "Composting Techniques",
-            videoUrl: "https://www.youtube.com/embed/CvP2kMCU_5o",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
             duration: "12 min",
             completed: false,
           },
@@ -359,7 +360,7 @@ export default function Course() {
             id: 2,
             type: "video",
             title: "Natural Pest Control Methods",
-            videoUrl: "https://www.youtube.com/embed/k_RiNPKJNdE",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
             duration: "18 min",
             completed: false,
           },
@@ -394,7 +395,7 @@ export default function Course() {
             id: 4,
             type: "video",
             title: "Organic Pesticide Preparation",
-            videoUrl: "https://www.youtube.com/embed/bL2Y_JZtopY",
+            videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
             duration: "10 min",
             completed: false,
           },
@@ -438,7 +439,7 @@ export default function Course() {
             id: 2,
             type: "video",
             title: "Drip Irrigation Systems",
-            videoUrl: "https://www.youtube.com/embed/79VUAFq2rbg",
+            videoUrl: "https://www.youtube.com/embed/ErMHR6Mc4Bk",
             duration: "15 min",
             completed: false,
           },
@@ -473,7 +474,7 @@ export default function Course() {
             id: 4,
             type: "video",
             title: "Mulching for Water Conservation",
-            videoUrl: "https://www.youtube.com/embed/AadLCOqalFk",
+            videoUrl: "https://www.youtube.com/embed/EHwklXhOe9w",
             duration: "8 min",
             completed: false,
           },
@@ -483,7 +484,7 @@ export default function Course() {
 
     let courseInfo = courseData[courseId]
 
-    
+    // Load saved progress if exists
     if (savedProgress) {
       const progress = JSON.parse(savedProgress)
       courseInfo = { ...courseInfo, contents: progress }
@@ -501,10 +502,10 @@ export default function Course() {
     const updatedCourse = { ...course, contents: updatedContents }
     setCourse(updatedCourse)
 
-    
+    // Save progress to localStorage
     localStorage.setItem(`course-${course.id}-progress`, JSON.stringify(updatedContents))
 
-    
+    // Update overall course progress in main courses list
     const savedCourses = localStorage.getItem("agrilink-courses")
     if (savedCourses) {
       const courses = JSON.parse(savedCourses)
@@ -545,7 +546,7 @@ export default function Course() {
 
   return (
     <div className="min-h-screen bg-background">
-      {}
+      {/* Header */}
       <div className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -584,7 +585,7 @@ export default function Course() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {}
+          {/* Sidebar - Course Contents */}
           <div className="lg:col-span-1">
             <Card>
               <CardHeader>
@@ -635,7 +636,7 @@ export default function Course() {
             </Card>
           </div>
 
-          {}
+          {/* Main Content */}
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
@@ -691,261 +692,6 @@ export default function Course() {
                       className="prose prose-green max-w-none"
                       dangerouslySetInnerHTML={{ __html: currentContent.content || "" }}
                     />
-                    {currentContentIndex === 0 && course.id === 1 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.fao.org/3/i0100e/i0100e02.htm"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              FAO Guide to Crop Rotation
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.extension.umn.edu/agriculture/crops/crop-rotation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              University Extension: Crop Rotation Benefits
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.rodaleinstitute.org/why-organic/organic-farming-practices/crop-rotations/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Rodale Institute: Organic Crop Rotations
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 1 && course.id === 1 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.fao.org/conservation-agriculture/crop-rotation/en/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              FAO: Crop Rotation for Conservation Agriculture
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.sare.org/resources/crop-rotation/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              SARE: Crop Rotation Topic Room
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 2 && course.id === 1 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.extension.iastate.edu/agdm/crops/html/a1-50.html"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Iowa State Extension: Crop Planning and Rotation
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.gov.mb.ca/agriculture/crops/soil-management/fag49s00.html"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Manitoba Agriculture: Crop Rotation Planning
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 3 && course.id === 1 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.worldbank.org/en/topic/agriculture/brief/climate-smart-agriculture"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              World Bank: Climate-Smart Agriculture
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.farmers.gov/conservation/crop-rotation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              USDA: Crop Rotation Practices
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 0 && course.id === 2 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a href="https://www.fao.org/soils/en/" target="_blank" rel="noopener noreferrer">
-                              FAO Soils Portal
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              NRCS Soil Health
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 2 && course.id === 2 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.fao.org/land-water/soil/soil-management-practices/en/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              FAO Soil Management Practices
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.extension.purdue.edu/extmedia/ay/ay-238.html"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Purdue Extension: Improving Garden Soils
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 0 && course.id === 3 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.fao.org/agriculture/crops/thematic-sitemap/theme/pests/ipm/en/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              FAO Integrated Pest Management
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.epa.gov/safepestcontrol/introduction-integrated-pest-management"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              EPA: Introduction to Integrated Pest Management
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 2 && course.id === 3 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.extension.iastate.edu/news/2008/companion.html"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Iowa State Extension: Companion Planting
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.reneesgarden.com/blogs/gardening-tips/companion-planting-guide"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Renee's Garden: Companion Planting Guide
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 0 && course.id === 4 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.fao.org/land-water/water/water-management/en/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              FAO Water Management
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/water/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              NRCS Water Resources
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
-                    {currentContentIndex === 2 && course.id === 4 && (
-                      <>
-                        <h3>Further Reading</h3>
-                        <ul>
-                          <li>
-                            <a
-                              href="https://www.epa.gov/watersense/rainwater-harvesting"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              EPA Rainwater Harvesting
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.twdb.texas.gov/conservation/rainwater/index.asp"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Texas Water Development Board: Rainwater Harvesting
-                            </a>
-                          </li>
-                        </ul>
-                      </>
-                    )}
                     <div className="text-center pt-6 border-t">
                       <Button
                         onClick={handleContentComplete}
@@ -967,7 +713,7 @@ export default function Course() {
               </CardContent>
             </Card>
 
-            {}
+            {/* Navigation */}
             <div className="flex justify-between mt-6">
               <Button
                 variant="outline"

@@ -39,7 +39,7 @@ export default function Education() {
   const [courses, setCourses] = useState<Course[]>([])
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
 
- 
+  // Initialize data from localStorage or use defaults
   useEffect(() => {
     const savedCourses = localStorage.getItem("agrilink-courses")
     const savedQuizzes = localStorage.getItem("agrilink-quizzes")
@@ -132,7 +132,7 @@ export default function Education() {
     setQuizzes(savedQuizzes ? JSON.parse(savedQuizzes) : defaultQuizzes)
   }, [])
 
-  
+  // Save to localStorage whenever data changes
   useEffect(() => {
     if (courses.length > 0) {
       localStorage.setItem("agrilink-courses", JSON.stringify(courses))
@@ -169,7 +169,7 @@ export default function Education() {
 
   return (
     <div className="min-h-screen bg-background px-4 lg:px-[10vw] pt-[90px]">
-      {}
+      {/* Header */}
       <motion.div
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -180,7 +180,7 @@ export default function Education() {
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("educationSubtitle")}</p>
       </motion.div>
 
-      {}
+      {/* Stats Cards */}
       <motion.div
         className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-4"
         initial={{ opacity: 0, y: 30 }}
@@ -224,7 +224,7 @@ export default function Education() {
         </Card>
       </motion.div>
 
-      {}
+      {/* Navigation Tabs */}
       <div className="mb-8 flex justify-center">
         <div className="flex rounded-lg bg-muted p-1">
           <button
@@ -263,7 +263,7 @@ export default function Education() {
         </div>
       </div>
 
-      {}
+      {/* Content based on active tab */}
       {activeTab === "courses" && (
         <motion.div
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
@@ -418,7 +418,7 @@ export default function Education() {
             </CardContent>
           </Card>
 
-          {}
+          {/* Course Progress */}
           <Card>
             <CardHeader>
               <CardTitle>Course Progress</CardTitle>
@@ -455,7 +455,7 @@ export default function Education() {
             </CardContent>
           </Card>
 
-          {}
+          {/* Quiz Results */}
           <Card>
             <CardHeader>
               <CardTitle>Quiz Results</CardTitle>

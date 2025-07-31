@@ -14,9 +14,9 @@ export default function ManageCrops() {
   const { crops } = useCrops()
   const { authUsers, isLoading: isAuthUsersLoading } = useAuthUsers()
 
-  const authUser = authUsers?.find((user) => user.id === userId)
+  const authUser = authUsers?.find((user) => user.authUserId === userId)
   const id = authUser?.id
-  const cropsShow = crops?.filter((crop) => crop.userId === Number(id))
+  const cropsShow = crops?.filter((crop) => crop.userId === id)
   const { t } = useTranslation()
 
   return (
@@ -35,11 +35,11 @@ export default function ManageCrops() {
       ) : cropsShow?.length === 0 ? (
         <div className="flex h-[30vh] flex-col items-center justify-center gap-4">
           <p className="text-lg text-muted-foreground">{t("noPersonalCrops")}</p>
-          <CreateCrop id={Number(id)} />
+          <CreateCrop id={id} />
         </div>
       ) : (
         <>
-          <CropsActions id={Number(id)} />
+          <CropsActions id={id} />
           <CropsShow crops={cropsShow} />
         </>
       )}

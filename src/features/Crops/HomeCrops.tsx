@@ -23,10 +23,10 @@ export default function HomeCrops() {
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
 
-      {}
+      {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl animate-float"></div>
       <div
         className="absolute bottom-20 left-20 w-48 h-48 bg-yellow-500/5 rounded-full blur-2xl animate-float"
@@ -108,10 +108,10 @@ export default function HomeCrops() {
                               whileHover={{ scale: 1.05 }}
                             />
 
-                            {}
+                            {/* Gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                            {}
+                            {/* Hover button */}
                             <motion.div
                               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
                               whileHover={{ scale: 1.1 }}
@@ -122,7 +122,7 @@ export default function HomeCrops() {
                               </button>
                             </motion.div>
 
-                            {}
+                            {/* Quality badge */}
                             <div className="absolute top-4 left-4">
                               <div className="flex items-center gap-1 px-3 py-1 bg-yellow-400 text-green-800 rounded-full text-sm font-bold shadow-soft">
                                 <FaStar size={12} />

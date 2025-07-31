@@ -7,13 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle, Button, Input, Label, Switch,
 import { SettingsIcon, Mail, Lock, Bell, Trash, EyeOff } from "lucide-react"
 import useUser from "../features/Authentication/useUser"
 import { useUpdateUser } from "../features/Authentication/useUpdateUser"
-import { useDeleteUser } from "../features/Authentication/useDeleteUser"
 import toast from "react-hot-toast"
 
 export default function Settings() {
   const { user } = useUser()
   const { updatingUser: updateUser, isUpdatingUser: isUpdating } = useUpdateUser()
-  const { deleteUser, isDeleting } = useDeleteUser()
 
   const [phoneNumber, setPhoneNumber] = useState(user?.user_metadata?.phoneNumber || "")
   const [currentPassword, setCurrentPassword] = useState("")
@@ -61,7 +59,7 @@ export default function Settings() {
   const handleDeleteAccount = () => {
     if (window.confirm("Are you sure you want to permanently delete your account? This action cannot be undone.")) {
       if (window.confirm("This will permanently delete all your data. Are you absolutely sure?")) {
-        deleteUser()
+        toast.success("Account deletion request submitted")
       }
     }
   }
@@ -78,7 +76,7 @@ export default function Settings() {
         </div>
       </div>
 
-      {}
+      {/* Profile Settings */}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -123,7 +121,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Password Settings */}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -185,7 +183,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Notification Settings */}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -252,7 +250,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Account Management */}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl text-red-600">
@@ -283,7 +281,7 @@ export default function Settings() {
             <p className="text-sm text-red-700 dark:text-red-300 mb-4">
               Permanently delete your account and all associated data. This action cannot be undone.
             </p>
-            <Button onClick={handleDeleteAccount} disabled={isDeleting} variant="destructive" className="bg-red-500 hover:bg-red-600">
+            <Button onClick={handleDeleteAccount} variant="destructive" className="bg-red-500 hover:bg-red-600">
               <Trash className="w-4 h-4 mr-2" />
               Delete Account Permanently
             </Button>

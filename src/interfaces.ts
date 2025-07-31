@@ -69,6 +69,15 @@ export interface ReviewForm {
   cropId: number
 }
 
+export interface CartItem {
+  id: number
+  crop_id: number
+  user_id: string
+  quantity: number
+  created_at: string
+  crops?: Crops
+}
+
 export interface Order {
   id: number
   user_id: string

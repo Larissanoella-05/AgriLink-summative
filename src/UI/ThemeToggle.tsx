@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "@/contexts/ThemeContext"
 
 export function ThemeToggle() {
-  const { toggleTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <Button

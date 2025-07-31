@@ -8,13 +8,14 @@ import useUser from '@/features/Authentication/useUser';
 import { useCrops } from '@/features/Crops/useCrops';
 import { useRecentCrops } from '@/features/Crops/useRecentCrops';
 
+// Loading skeleton component
 const LoadingSkeleton = () => (
   <div className="min-h-screen bg-background">
     <div className="animate-pulse">
-      {}
+      {/* Header skeleton */}
       <div className="h-16 bg-muted rounded-none"></div>
 
-      {}
+      {/* Content skeleton */}
       <div className="container mx-auto px-4 py-8 space-y-8">
         <div className="h-8 bg-muted rounded-2xl w-1/3"></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

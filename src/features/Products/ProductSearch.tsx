@@ -15,7 +15,7 @@ export default function ProductsSearch({ searchQuery, onSearchChange }: Products
   const { t } = useTranslation()
   const [localQuery, setLocalQuery] = useState(searchQuery)
 
-  
+  // Debounce search
   useEffect(() => {
     const timer = setTimeout(() => {
       onSearchChange(localQuery)
