@@ -76,7 +76,7 @@ export default function Settings() {
         </div>
       </div>
 
-      {/* Profile Settings */}
+      {}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -121,7 +121,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {/* Password Settings */}
+      {}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -183,7 +183,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {/* Notification Settings */}
+      {}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl">
@@ -250,7 +250,7 @@ export default function Settings() {
         </CardContent>
       </Card>
 
-      {/* Account Management */}
+      {}
       <Card className="shadow-lg border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl text-red-600">
