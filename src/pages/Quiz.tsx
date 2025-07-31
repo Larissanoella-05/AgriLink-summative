@@ -188,7 +188,7 @@ export default function Quiz() {
     const score = calculateScore()
     const percentage = Math.round((score / quiz.questions.length) * 100)
 
-    // Save quiz results to localStorage
+  
     const savedQuizzes = localStorage.getItem("agrilink-quizzes")
     if (savedQuizzes) {
       const quizzes = JSON.parse(savedQuizzes)
