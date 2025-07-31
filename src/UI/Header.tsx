@@ -43,7 +43,7 @@ export default function Header() {
         <NavbarActions />
       </div>
 
-      {/* Decorative bottom border */}
+      {}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
     </motion.header>
   );
