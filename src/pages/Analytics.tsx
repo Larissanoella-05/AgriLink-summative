@@ -20,7 +20,7 @@ export default function Analytics() {
   const [localOrders, setLocalOrders] = useState<LocalOrder[]>([])
   const [localReviews, setLocalReviews] = useState<LocalReview[]>([])
 
-  // Fetch local storage data
+  
   const fetchLocalData = () => {
     if (!user?.id) return
     
@@ -37,15 +37,14 @@ export default function Analytics() {
 
   const handleMarkAsDelivered = (orderId: string) => {
     updateOrderStatus(orderId, 'completed')
-    fetchLocalData() // Refresh data
+    fetchLocalData() 
   }
 
-  // Fetch reviews for farmer's crops
+
   useEffect(() => {
     const fetchFarmerReviews = async () => {
       if (!user?.id) return
       
-      // Get farmer's crops
       const { data: crops } = await supabase
         .from("crops")
         .select("id, name")
@@ -53,7 +52,7 @@ export default function Analytics() {
       
       if (!crops) return
       
-      // Get reviews for those crops
+    
       const cropIds = crops.map(c => c.id)
       const farmerReviewsData = reviews?.filter(review => 
         cropIds.includes(review.cropId || review.crop_id)
@@ -79,7 +78,7 @@ export default function Analytics() {
         </div>
       </div>
 
-      {/* Overview Cards */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200">
           <CardContent className="p-6">
@@ -149,7 +148,7 @@ export default function Analytics() {
         </Card>
       </div>
 
-      {/* Detailed Analytics */}
+      {}
       <Tabs defaultValue="reviews" className="space-y-6">
         <TabsList className="grid w-full grid-cols-2 bg-gray-100 dark:bg-gray-800 rounded-2xl p-1">
           <TabsTrigger value="reviews" className="rounded-xl">
@@ -177,7 +176,7 @@ export default function Analytics() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {/* Local Storage Reviews */}
+                  {}
                   {localReviews.map((review) => (
                     <div key={`local-${review.id}`} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border">
                       <div className="flex items-start justify-between mb-3">
@@ -198,7 +197,7 @@ export default function Analytics() {
                     </div>
                   ))}
                   
-                  {/* Database Reviews */}
+                  {}
                   {farmerReviews.map((review) => (
                     <div key={`db-${review.id}`} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border">
                       <div className="flex items-start justify-between mb-3">
