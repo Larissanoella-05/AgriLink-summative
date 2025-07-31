@@ -38,14 +38,14 @@ export default function Footer() {
       id="contact"
       className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-gray-900"
     >
-      {/* Decorative background elements */}
+      {}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-transparent to-yellow-900/20"></div>
       <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-500/5 rounded-full blur-3xl"></div>
 
       <div className="relative container mx-auto px-4 py-20 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
-          {/* Brand Section */}
+          {}
           <motion.div
             className="lg:col-span-2 space-y-8"
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Company Links */}
+          {}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+          {}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom section */}
+        {}
         <motion.div
           className="mt-20 pt-8 border-t border-green-800/50"
           initial={{ opacity: 0 }}
