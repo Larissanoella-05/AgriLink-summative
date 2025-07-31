@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-// Define the type for the Props
+
 interface StarsProps {
   showRating?: boolean;
   maxStars?: number;
@@ -11,7 +11,7 @@ interface StarsProps {
   messages?: string[];
   defaultRating?: number;
   onSetRatingOutside?: (rating: number) => void;
-  rating?: number; // Add a new prop for dynamic rating
+  rating?: number; 
 }
 
 interface StarProps {
@@ -41,9 +41,9 @@ const Stars: React.FC<StarsProps> = ({
   size = 48,
   className = "",
   messages = [],
-  //   defaultRating = 0,
+ 
   onSetRatingOutside,
-  rating = 0, // This is the rating passed in
+  rating = 0, 
 }) => {
   const [tempRating, setTempRating] = useState<number>(0);
 
@@ -96,7 +96,7 @@ Stars.propTypes = {
   messages: PropTypes.array,
   defaultRating: PropTypes.number,
   onSetRatingOutside: PropTypes.func,
-  rating: PropTypes.number, // Prop for rating value
+  rating: PropTypes.number, 
 };
 
 const Star: React.FC<StarProps> = ({
