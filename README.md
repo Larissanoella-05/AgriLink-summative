@@ -2,9 +2,7 @@
 
 A modern agricultural marketplace connecting farmers with buyers across Rwanda. Built with React, TypeScript, and Supabase.
 
-## Live Demo
 
-[Visit AgriLink Rwanda](https://agrilink-rwanda.netlify.app)
 
 ## Table of Contents
 
